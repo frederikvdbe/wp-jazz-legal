@@ -1,0 +1,52 @@
+name: Deploy Production
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20.0.0'
+                  cache: npm
+
+            - name: Install dependencies
+              env:
+                  ACF_PRO_KEY: ${{ secrets.ACF_PRO_KEY }}
+                  WP_PLUGIN_GF_KEY: ${{ secrets.WP_PLUGIN_GF_KEY }}
+                  COMPOSER_AUTH: ${{ secrets.ACF_AUTH_JSON }}
+              run: |
+                  npm install
+                  composer install --ignore-platform-reqs --no-dev
+
+            - name: Build
+              run: npm run build
+
+            - name: Sync
+              env:
+                  dest: 'frederikvdbe@ssh045.webhosting.be:/site/subsites/jazz.legal/'
+              run: |
+                  echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
+                  chmod 600 ./deploy_key
+                  rsync -avh \
+                    -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+                    --exclude /deploy_key \
+                    --exclude /.git/ \
+                    --exclude /.github/ \
+                    --exclude /.htaccess \
+                    --exclude /.ddev \
+                    --exclude /.auth.json \
+                    --exclude /.env \
+                    --exclude /web/.htaccess \
+                    --exclude /web/app/uploads/**/* \
+                    --exclude /node_modules/ \
+                    ./ ${{env.dest}}
