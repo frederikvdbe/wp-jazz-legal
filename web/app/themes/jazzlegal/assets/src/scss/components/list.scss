@@ -1,0 +1,27 @@
+.list-checks{
+	@extend %list-reset;
+
+	li{
+		@extend %font-size-xsmall;
+		line-height: 1.1rem;
+		position: relative;
+		padding-left: 34px;
+		margin-bottom: 12px;
+
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+
+		&:before{
+			@extend %font-size-body;
+			@extend %fa-pseudo;
+			content: "\f058";
+			font-family: "Font Awesome 5 Pro";
+			font-weight: 400;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			color: $color-success;
+		}
+	}
+}

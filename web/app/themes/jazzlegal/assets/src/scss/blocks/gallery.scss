@@ -1,0 +1,20 @@
+.block_gallery {
+
+	.block-slider {
+
+		.swiper-container{
+
+			&,
+			.container {
+				position: relative;
+			}
+
+			.swiper-slide {
+
+				img {
+					@extend %image-fluid;
+				}
+			}
+		}
+	}
+}

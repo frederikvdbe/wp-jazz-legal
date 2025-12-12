@@ -1,0 +1,1 @@
+<svg class="shape shape2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1765.832 960.838"><path d="M1765.832,1518.571S859.968,1613.854,0,1415.729V580.636H1765.832Z" transform="translate(0 -580.636)" fill="#e6f4f1"/></svg>

@@ -1,0 +1,190 @@
+%font-body {
+	font-family: muli, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	@include letter-spacing(20);
+}
+
+%font-title {
+	font-family: playfair-display, serif;
+	font-weight: 700;
+	font-style: normal;
+	@include letter-spacing(0);
+}
+
+%font-size-header1 {
+	font-size: 1.433rem;
+	line-height: 2.1rem;
+
+	@include breakpoint(mobile-ls) {
+		font-size: 1.833rem;
+		line-height: 2.5rem;
+	}
+
+	@include breakpoint(desktop-wide) {
+		font-size: 3rem;
+		line-height: 4rem;
+	}
+}
+
+%font-size-header2 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+
+%font-size-header3 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+%font-size-header4 {
+	font-size: 1.1rem;
+	line-height: 1.2rem;
+}
+
+%font-size-header5 {
+	font-size: 1rem;
+	line-height: 1rem;
+}
+
+%font-size-header6 {
+	font-size: .75rem;
+	line-height: 1rem;
+}
+
+%font-size-xlarge {
+	font-size: 3rem;
+	line-height: 2.5rem;
+
+	@include breakpoint(mobile-ls) {
+		font-size: 4.5rem;
+		line-height: 4rem;
+	}
+
+	@include breakpoint(tablet) {
+		font-size: 5.6rem;
+		line-height: 6rem;
+	}
+
+	@include breakpoint(desktop) {
+		font-size: 7.5rem;
+		line-height: 7rem;
+	}
+}
+
+%font-size-small {
+	font-size: .9rem;
+	line-height: 1.4rem;
+}
+
+%font-size-xsmall {
+	font-size: .8rem;
+	line-height: 1.556rem;
+
+	@include breakpoint(desktop) {
+		line-height: 1.7rem;
+	}
+}
+
+%font-size-xxsmall {
+	font-size: .7rem;
+	line-height: 1.226rem;
+}
+
+%font-size-tiny {
+	font-size: .5556rem;
+	line-height: 1rem;
+
+	@include breakpoint(desktop) {
+		font-size: .5rem;
+		line-height: 1rem;
+	}
+}
+
+%font-size-hero-large {
+	font-size: 6.4vw;
+	line-height: 10.4vw;
+
+	@include breakpoint(tablet) {
+		font-size: 5.4vw;
+		line-height: 8.4vw;
+	}
+
+	@include breakpoint(tablet-ls) {
+		font-size: 4.2vw;
+		line-height: 6.8vw;
+	}
+
+	@include breakpoint(desktop-wide) {
+		font-size: 3rem;
+		line-height: 5rem;
+	}
+}
+
+%font-size-hero-default {
+	font-size: 1.833rem;
+	line-height: 2.5rem;
+
+	@include breakpoint(desktop) {
+		font-size: 2.2rem;
+		line-height: 2.5rem;
+	}
+}
+
+%font-size-body {
+	font-size: 1rem;
+	line-height: 1.556rem;
+
+	@include breakpoint(desktop) {
+		line-height: 1.7rem;
+	}
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	font-size: 18px;
+
+	@include breakpoint(desktop) {
+		font-size: 20px;
+	}
+
+}
+
+body {
+	@extend %font-body;
+	@extend %font-size-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@extend %font-title;
+	margin-bottom: 38px;
+}
+
+h1 {
+	@extend %font-size-header1;
+}
+
+h2 {
+	@extend %font-size-header2;
+}
+
+h3 {
+	@extend %font-size-header3;
+}
+
+h4 {
+	@extend %font-size-header4;
+}
+
+h5 {
+	@extend %font-size-header5;
+}
+
+h6 {
+	@extend %font-size-header6;
+}

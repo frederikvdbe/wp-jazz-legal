@@ -1,0 +1,39 @@
+@import 'theme/_myvariables';
+
+// body,
+// input,
+// textarea,
+// submit,.press-this a.wp-switch-editor,#wpadminbar * {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 300;
+// }
+
+.login{
+
+    h1{
+
+        a{
+            background-image: url('../../../images/admin/logo_login.png');
+        }
+    }
+
+    // .button-primary{
+    //     background: $base-color;
+    //     border-color: $base-color;
+    //     -webkit-box-shadow: 0 1px 0 $base-color;
+    //     box-shadow: 0 1px 0 $base-color;
+    //     color: #fff;
+    //     text-decoration: none;
+    //     text-shadow: none;
+    // }
+
+    // .button-primary.focus,
+    // .button-primary.hover,
+    // .button-primary:focus,
+    // .button-primary:hover {
+    //     background: $base-color;
+    //     border-color: $base-color;
+    //     color: #fff;
+    // }
+
+}

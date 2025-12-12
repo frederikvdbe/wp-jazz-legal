@@ -1,0 +1,67 @@
+/* Breakpoints */
+$breakpoint_mobile: 320px;
+$breakpoint_mobile_landscape: 480px;
+$breakpoint_tablet: 768px;
+$breakpoint_tablet_landscape: 1024px;
+$breakpoint_desktop: 1280px;
+$breakpoint_desktop_wide: 1500px;
+$breakpoint_desktop_xwide: 1940px;
+
+/* Colors */
+$color-primary: #89d8e9;
+$color-primary-light: #e6f4f1;
+$color-primary-dark: #324b50;
+$color-primary-semi: #b1ddd5;
+$color-accent: #f5b8bc;
+$color-accent-dark: #c98287;
+$color-error: #e98989;
+$color-success: #7fd1ae;
+$color-text-body: #6f7793;
+$color-text-header: $color-primary-dark;
+
+$color-body-light: #95b0b6;
+$color-body-dark: #2e3038;
+
+/* Form */
+$form-input-background: #f9f9f9;
+$form-input-color: $color-primary-dark;
+$form-input-color-placeholder: rgba($color-text-body, 0.6);
+$form-input-color-border: #eaeaea;
+$select2-height--light: 52px;
+$select2-height--padding: 16px;
+
+/* Easings */
+$easing-outQuint: cubic-bezier(0.22, 1, 0.36, 1);
+$easing-default: $easing-outQuint;
+
+/* Grid */
+/* See docs: https://github.com/hugeinc/flexboxgrid-sass */
+/* See demo: http://hugeinc.github.io/flexboxgrid-sass/ */
+$grid-width: 1614px;
+$breakpoints: sm $breakpoint_mobile $breakpoint_mobile,
+  md $breakpoint_tablet $breakpoint_tablet,
+  lg $breakpoint_desktop $breakpoint_desktop,
+  xlg $breakpoint_desktop_wide $breakpoint_desktop_wide;
+$gutter-width: 42px;
+$outer-margin: 36px;
+
+/* CSS Hamburgers */
+$hamburger-padding-x: 8px;
+$hamburger-padding-y: 4px;
+$hamburger-layer-width: 32px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 2px;
+$hamburger-layer-color: $color-primary-dark;
+$hamburger-layer-border-radius: 4px;
+$hamburger-hover-opacity: 1;
+$hamburger-active-layer-color: $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-types: (squeeze);
+
+/* Sizes */
+$size-header: 120px;
+$size-header-desktop: 180px;
+
+/* Layers */
+$z-nav: 990;
+$z-header: 999;

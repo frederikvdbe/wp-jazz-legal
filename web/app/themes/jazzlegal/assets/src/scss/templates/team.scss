@@ -1,0 +1,30 @@
+.tpl-team{
+
+	.block_hero {
+
+		h1 {
+			@include breakpoint(desktop-wide) {
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.block_cta {
+		margin-top: 80px;
+
+		@include breakpoint(tablet-ls) {
+			margin-top: 156px;
+		}
+	}
+
+	&:not(.lang-nl) {
+
+		.site-main{
+			padding-bottom: 89px;
+
+			@include breakpoint(tablet-ls) {
+				padding-bottom: 127px;
+			}
+		}
+	}
+}

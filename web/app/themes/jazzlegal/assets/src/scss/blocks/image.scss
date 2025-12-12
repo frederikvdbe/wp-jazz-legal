@@ -1,0 +1,49 @@
+.block_image {
+
+	.block-image {
+
+		.image-wrapper {
+			position: relative;
+
+			&,
+			img {
+
+				@include breakpoint(tablet-ls) {
+					height: 100%;
+					min-height: 100%;
+				}
+			}
+
+			img {
+				width: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: calc(100% + 2px);
+				height: calc(100% + 2px);
+				margin-top: -1px;
+				margin-left: -1px;
+				fill: #fff;
+
+				&.image-mask-stroke1 {
+					top: 24px;
+					left: 24px;
+					fill: $color-primary-light;
+				}
+			}
+		}
+
+		.image-caption {
+			@extend %font-size-header6;
+			position: relative;
+			z-index: 2;
+			margin-top: 12px;
+			text-align: center;
+		}
+	}
+}

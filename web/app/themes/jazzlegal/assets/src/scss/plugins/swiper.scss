@@ -1,0 +1,36 @@
+.swiper-container {
+	--swiper-theme-color: #324b50;
+	--swiper-navigation-size: 20px;
+
+	.swiper-pagination{
+
+	}
+
+	.swiper-navigation {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		transform: translateY(-50%);
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 48px;
+			height: 48px;
+			border-radius: 100%;
+			background: #fff;
+			box-shadow: 2px 4px 16px rgba($color-primary-dark, .4);
+		}
+
+		.swiper-button-prev {
+			left: 0;
+			transform: translateX(-50%);
+		}
+
+		.swiper-button-next {
+			right: 0;
+			transform: translateX(50%);
+		}
+	}
+}

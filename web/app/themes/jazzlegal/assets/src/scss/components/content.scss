@@ -1,0 +1,83 @@
+.page-content{
+
+	/* Headers */
+	h1{}
+
+	h2:not(.block-title){
+		margin-top: 9vw;
+
+		@include breakpoint(desktop) {
+			margin-top: 137px;
+		}
+
+	}
+
+	h3{
+		margin-top: 5vw;
+
+		@include breakpoint(desktop) {
+			margin-top: 65px;
+		}
+	}
+
+	h3,
+	h4,
+	h5{
+		@extend %font-body;
+		font-weight: 800;
+	}
+
+	/* Paragraphs */
+	p{
+		margin-bottom: 32px;
+
+		&:last-of-type{
+			margin: 0;
+		}
+	}
+
+	/* Links */
+	a{}
+
+	/* Images */
+	img,
+	.wp-caption{
+		//margin-top: 84px;
+		margin-bottom: 95px;
+
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+
+	img{
+		@extend %image-responsive;
+	}
+
+	.wp-caption,
+	.image-caption{
+		@extend %font-size-xxsmall;
+		color: rgba($color-text-body, .6);
+		margin-left: 0;
+		margin-right: 0;
+		width: 100% !important;
+		text-align: center;
+
+		img{
+			@extend %image-responsive;
+			margin: 0 auto 28px;
+		}
+
+		.wp-caption-text{
+			text-align: center;
+		}
+	}
+
+	/* Blockquotes */
+	blockquote{
+		display: block;
+		padding-left: 32px;
+		border-left: 7px solid $color-primary-light;
+		margin-bottom: 32px;
+	}
+}

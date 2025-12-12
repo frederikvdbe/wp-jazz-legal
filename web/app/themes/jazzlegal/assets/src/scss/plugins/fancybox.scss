@@ -1,0 +1,48 @@
+.fancybox{
+
+	&__container{
+	}
+
+	&__backdrop{
+		background: rgba($color-primary-dark, .8);
+	}
+
+	&__carousel{
+
+		.carousel__button{
+
+			&.is-close{
+				background: #fff;
+				top: -56px;
+
+				//&:after{
+				//	content: " ";
+				//	position: absolute;
+				//	top: 4px;
+				//	left: 4px;
+				//	width: 36px;
+				//	height: 36px;
+				//	border: 1px solid #fff;
+				//	border-radius: 100px;
+				//}
+
+				svg{
+					color: $color-primary-dark;
+					filter: none;
+				}
+			}
+		}
+	}
+
+	&__content{
+
+		&#calendly-popup{
+			box-shadow: 0 12px 48px rgba(0, 0, 0, .2);
+
+			@include breakpoint(tablet) {
+				min-width: 480px;
+				padding: 0;
+			}
+		}
+	}
+}

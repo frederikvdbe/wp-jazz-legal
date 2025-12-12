@@ -1,0 +1,9 @@
+.tpl-offer{
+
+	.content-text{
+
+		img{
+			@extend %image-responsive;
+		}
+	}
+}

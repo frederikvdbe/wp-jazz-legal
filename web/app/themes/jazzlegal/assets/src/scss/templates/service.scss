@@ -1,0 +1,28 @@
+.sgl-service{
+
+	.block_content{
+
+		.pane-body{
+			padding-bottom: 0;
+		}
+
+		.pane-content{
+			margin-bottom: 48px;
+
+			@include breakpoint(desktop) {
+				margin-bottom: 105px;
+			}
+		}
+
+		// Service without children
+		.service-content{
+			margin-top: 48px;
+			margin-bottom: 65px;
+
+			@include breakpoint(desktop) {
+				margin-top: 86px;
+				margin-bottom: 105px;
+			}
+		}
+	}
+}

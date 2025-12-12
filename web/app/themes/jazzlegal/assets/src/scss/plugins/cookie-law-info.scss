@@ -1,0 +1,81 @@
+#cookie-law-info-bar{
+	//width: 100% !important;
+	//max-width: 320px !important;
+	//border-radius: 0;
+
+	//@include breakpoint(desktop) {
+	//	bottom: 30px !important;
+	//	right: 30px !important;
+	//}
+
+	padding: 32px 30px !important;
+
+	.cli-bar-container{
+
+		.cli-bar-message{
+			@extend %font-size-xxsmall;
+		}
+
+		.cli-bar-btn_container{
+
+			.cli_settings_button{
+				@extend %font-size-xxsmall;
+				color: $color-body-light;
+			}
+
+			.cli-plugin-main-button{
+				@extend .btn-rounded;
+				text-transform: none;
+				line-height: 36px !important;
+				padding: 8px 16px !important;
+				color: #fff !important;
+				background: $color-primary !important;
+			}
+		}
+	}
+}
+
+.cli-modal{
+
+	.cli-modal-content,
+	.cli-privacy-content-text{
+		@extend %font-size-xxsmall;
+	}
+
+	.cli-modal-content{
+
+		.cli-modal-body{
+
+			.cli-privacy-content-text{
+				max-height: 70px;
+				color: $color-text-body;
+			}
+
+			.cli-collapsed{
+
+				.cli-privacy-content-text{
+					max-height: none;
+					//color: $color-text-body;
+				}
+			}
+		}
+
+		.cli-modal-footer{
+
+			#wt-cli-privacy-save-btn{
+				@extend .btn-rounded;
+				text-transform: none;
+				line-height: 36px !important;
+				padding-left: 16px !important;
+				padding-right: 16px !important;
+				color: #fff !important;
+				background: $color-primary !important;
+			}
+		}
+	}
+}
+
+.cli-modal-backdrop{
+	opacity: .8 !important;
+	background-color: $color-primary-dark !important;
+}

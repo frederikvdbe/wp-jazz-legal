@@ -1,0 +1,290 @@
+form {
+
+	/* Input elements */
+
+	input,
+	button,
+	textarea,
+	label {
+		@extend %font-body;
+		@extend %font-size-small;
+		display: block;
+		max-width: 100%;
+	}
+
+	input:not([type='radio']):not([type="checkbox"]):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+	textarea,
+	label {
+		width: 100%;
+	}
+
+	input:not([type='radio']):not([type="checkbox"]):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+	textarea {
+		padding: 15px 21px;
+		background: $form-input-background;
+		border: 1px solid $form-input-background;
+
+		/* Placeholders */
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: $form-input-color-placeholder;
+		}
+
+		&::-moz-placeholder { /* Firefox 19+ */
+			color: $form-input-color-placeholder;
+		}
+
+		&:-ms-input-placeholder { /* IE 10+ */
+			color: $form-input-color-placeholder;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $form-input-color-placeholder;
+		}
+
+		/* Stats */
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0px rgba(81, 203, 238, 1) inset;
+			border: 1px solid rgba(81, 203, 238, 1);
+		}
+	}
+
+	textarea {
+		white-space: pre-wrap;
+		padding: 15px 21px;
+		// resize: vertical;
+		// wrap: off;
+	}
+
+	input[type="radio"] {
+		-webkit-appearance: none;
+		background-color: #fff;
+		border: 1px solid $form-input-color-border;
+		padding: 13px;
+		border-radius: 50px;
+		display: inline-block;
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:after {
+			position: absolute;
+			top: 7px;
+			left: 7px;
+			content: ' ';
+			width: 12px;
+			height: 12px;
+			border-radius: 50px;
+			background: $color-primary-dark;
+			text-shadow: none;
+			font-size: 32px;
+			opacity: 0;
+			transform: scale(0);
+			transition: all .2s $easing-default;
+		}
+
+		&:checked {
+
+			&:after {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+
+	input[type="checkbox"] {
+		-webkit-appearance: none;
+		background-color: #fff;
+		border: 1px solid $form-input-color-border;
+		padding: 8px;
+		border-radius: 3px;
+		display: inline-block;
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:after {
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			content: ' ';
+			width: 10px;
+			height: 10px;
+			background: $color-primary-dark;
+			text-shadow: none;
+			font-size: 32px;
+			opacity: 0;
+			transform: scale(0);
+			transition: all .2s $easing-default;
+		}
+
+		&:checked {
+
+			&:after {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		&:active,
+		&:checked:active {
+
+		}
+	}
+
+	input[type="submit"],
+	button[type="submit"] {
+		@extend .btn-rounded;
+	}
+
+	/* Layout */
+	.form-row {
+		display: flex;
+		flex-direction: column;
+
+		.row-label {
+
+		}
+
+		.row-input {
+
+		}
+
+		&.input--radio {
+
+			.row-input {
+				display: flex;
+
+				.radio-input {
+					display: flex;
+					align-items: center;
+					margin-right: 24px;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+
+					input {
+						margin-right: 7px;
+					}
+				}
+			}
+		}
+
+		&.row--hidden {
+			display: none;
+		}
+	}
+
+
+	/* Specific forms */
+	&.form--calculator {
+
+		.form-header {
+
+			.form-title {
+				@extend %font-title;
+				@extend %font-size-header2;
+				color: $color-primary-dark;
+				margin-bottom: 51px;
+
+				span {
+					@include text-underlined(#fff, false);
+				}
+			}
+		}
+
+		.form-description {
+			margin-top: 40px;
+		}
+
+		.form-body {
+			margin-top: 40px;
+
+			.form-row {
+				margin-top: 22px;
+				padding-bottom: 22px;
+				border-bottom: 1px solid #B1DDD5;
+
+				@include breakpoint(tablet) {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+				}
+
+				&:last-of-type {
+					border-bottom: 0;
+				}
+
+				.row-label {
+					font-weight: 600;
+					margin-bottom: 8px;
+
+					@include breakpoint(tablet) {
+						flex: 0 0 45.64%;
+						margin-bottom: 0;
+					}
+				}
+
+				.row-input {
+
+					@include breakpoint(tablet) {
+						flex: 0 0 38.26%;
+					}
+				}
+
+				&.row-submit {
+					@extend %font-size-xxsmall;
+
+					.row-input {
+						@include breakpoint(tablet) {
+							flex: 1 0 auto;
+						}
+					}
+
+					.row-label {
+						flex: 0 1 auto;
+						font-weight: 300;
+						margin-top: 12px;
+
+						@include breakpoint(tablet) {
+							margin-top: 0;
+							margin-left: auto;
+							flex: 0 1 auto;
+							padding-left: 20px;
+						}
+
+						a {
+							font-weight: 600;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.form-lead & {
+
+		.gform_body {
+
+			ul.gform_fields {
+
+				li.gfield {
+					margin-bottom: 25px;
+
+					&.gfield--half {
+
+						@include between-breakpoints(0px, $breakpoint_tablet) {
+							flex: 0 0 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

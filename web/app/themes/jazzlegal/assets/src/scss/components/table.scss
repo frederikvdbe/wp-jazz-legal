@@ -1,0 +1,27 @@
+.table-container {
+	overflow-x: auto;
+
+	table {
+		width: auto !important;
+		min-width: 100%;
+		height: auto !important;
+
+		td,
+		th {
+			width: auto !important;
+			border: 1px solid $color-primary-light;
+			padding: 8px;
+			text-align: left;
+
+			@include breakpoint(desktop) {
+				padding: 16px;
+			}
+		}
+
+		th {
+			font-weight: 700;
+			color: $color-primary-dark;
+			background: rgba($color-primary-light, .4);
+		}
+	}
+}

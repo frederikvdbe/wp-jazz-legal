@@ -1,0 +1,25 @@
+.logo{
+	transition: all .8s $easing-default;
+
+	.logo-front{
+		fill: $color-body-dark;
+		transition: all .4s $easing-default;
+	}
+
+	.logo-back{
+		fill: $color-primary;
+		transition: all .4s $easing-default;
+	}
+
+	&.logo--white{
+
+		.logo-front{
+			fill: #fff;
+		}
+
+		.logo-back{
+			fill: #fff;
+			opacity: .3;
+		}
+	}
+}

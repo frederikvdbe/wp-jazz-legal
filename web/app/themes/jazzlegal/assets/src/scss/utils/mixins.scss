@@ -1,0 +1,130 @@
+// Breakpoints
+@mixin breakpoint($point, $value: 0) {
+	@if $point == mobile {
+		@media (min-width: $breakpoint_mobile) {
+			@content;
+		}
+	} @else if $point == mobile-ls {
+		@media (min-width: $breakpoint_mobile_landscape) {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media (min-width: $breakpoint_tablet) {
+			@content;
+		}
+	} @else if $point == tablet-ls {
+		@media (min-width: $breakpoint_tablet_landscape) {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media (min-width: $breakpoint_desktop) {
+			@content;
+		}
+	} @else if $point == desktop-wide {
+		@media (min-width: $breakpoint_desktop_wide) {
+			@content;
+		}
+	} @else if $point == desktop-xwide {
+		@media (min-width: $breakpoint_desktop_wide) {
+			@content;
+		}
+	} @else {
+		@media ($point: $value) {
+			@content;
+		}
+	}
+}
+
+@mixin between-breakpoints($min, $max, $is_var: true) {
+	@media (min-width: $min) and (max-width: (if($is_var, #{$max - 1px}, $max))) {
+		@content;
+	}
+}
+
+@mixin letter-spacing($spacing) {
+	letter-spacing: ($spacing / 1000) * 1em;
+}
+
+// Vertical center until block height
+// https://medium.com/@SteelKiwiDev/vertical-centering-until-the-block-reaches-specified-height-ea2e985f461
+@mixin vertical-center($height, $vertical-wrapper) {
+	white-space: nowrap;
+	overflow: hidden;
+	&:after {
+		content: "";
+		width: 0;
+		height: $height;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	#{$vertical-wrapper} {
+		white-space: normal;
+		display: inline-block;
+		vertical-align: middle;
+		word-break: break-word;
+	}
+}
+
+// https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/
+@mixin text-underlined($color, $hover: false, $hover-color: null) {
+	position: relative;
+	z-index: 2;
+	display: inline;
+	text-decoration: none;
+	background-image: linear-gradient($color, $color);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: all 0.2s;
+	padding-left: 2px;
+	padding-right: 2px;
+
+	@if ($hover-color) {
+		&:hover {
+			color: $hover-color;
+		}
+	}
+
+	@if ($hover) {
+		background-size: 0% 40%;
+
+		&:hover {
+			background-size: 100% 40%;
+		}
+	} @else {
+		background-size: 100% 40%;
+	}
+}
+
+// https://css-tricks.com/snippets/css/fluid-typography/
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(
+					#{$min-font-size} + #{strip-unit(
+							$max-font-size - $min-font-size
+						)} *
+						(
+							(100vw - #{$min-vw}) / #{strip-unit(
+									$max-vw - $min-vw
+								)}
+						)
+				);
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
+}

@@ -1,0 +1,110 @@
+.tpl-blog{
+
+	.block_cards{
+
+		.block-body{
+			margin-top: 67px;
+			margin-bottom: 85px;
+
+			@include breakpoint(tablet) {
+				margin-top: 157px;
+				margin-bottom: 211px;
+			}
+
+			@include breakpoint(desktop) {
+				margin-top: 157px;
+				margin-bottom: 211px;
+			}
+
+			.block-items{
+				position: relative;
+				display: flex;
+				flex-direction: column;
+
+				@include breakpoint(tablet) {
+					flex-flow: row wrap;
+					justify-content: space-between;
+					overflow: hidden;
+				}
+
+				&:after{
+					display: none;
+					content: " ";
+					position: absolute;
+					top: 0;
+					left: 50%;
+					height: 100%;
+					width: 1px;
+					background: #EAECED;
+
+					@include breakpoint(tablet) {
+						display: block;
+					}
+				}
+
+				.block-item{
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					flex: 0 0 44.5%;
+					margin-top: 56px;
+					margin-bottom: 48px;
+
+					@include breakpoint(desktop) {
+						margin-top: 84px;
+						margin-bottom: 78px;
+					}
+
+					&:after{
+						content: " ";
+						position: absolute;
+						bottom: -48px;
+						left: -15%;
+						width: 130%;
+						height: 1px;
+						background: #EAECED;
+
+						@include breakpoint(tablet) {
+							left: 0;
+						}
+
+						@include breakpoint(desktop) {
+							bottom: -78px;
+						}
+					}
+
+					&:first-of-type{
+						margin-top: 0;
+					}
+
+					&:nth-child(2){
+
+						@include breakpoint(tablet) {
+							margin-top: 0;
+						}
+					}
+
+					&:last-of-type{
+
+						&:after{
+							display: none;
+						}
+					}
+
+					&:nth-last-child(2){
+
+						@include breakpoint(tablet) {
+							&:after{
+								display: none;
+							}
+						}
+					}
+
+					.block-card{
+						flex: 1;
+					}
+				}
+			}
+		}
+	}
+}

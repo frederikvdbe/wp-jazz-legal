@@ -1,0 +1,29 @@
+.content-block.content-video{
+	margin-top: 36px;
+
+	@include breakpoint(tablet) {
+		margin-top: 56px;
+	}
+
+	@include breakpoint(desktop) {
+		margin-top: 68px;
+	}
+
+	.video-container {
+		position: relative;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.video-container iframe,
+	.video-container object,
+	.video-container embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

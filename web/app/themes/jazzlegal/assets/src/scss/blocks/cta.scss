@@ -1,0 +1,88 @@
+.block_cta{
+	position: relative;
+	padding: 108px 0 186px;
+	background: $color-primary;
+	text-align: center;
+	color: $color-body-dark;
+
+	@include breakpoint(tablet) {
+		padding: 183px 0;
+	}
+
+	@include breakpoint(desktop) {
+		margin-top: 169px;
+	}
+
+	.block-body{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+
+		&.block-body--left {
+			justify-content: flex-start;
+			align-items: flex-start;
+			text-align: left;
+
+			@include breakpoint(desktop) {
+				padding-left: 117px;
+			}
+
+			.block-title,
+			.block-text{
+				max-width: 968px;
+			}
+		}
+	}
+
+	.block-title,
+	.block-text{
+		max-width: 342px;
+
+		@include breakpoint(tablet) {
+			max-width: 100%;
+		}
+	}
+
+	.block-title{
+		@extend %font-title;
+		@extend %font-size-header1;
+		color: #fff;
+	}
+
+	.block-text{
+		margin-top: 42px;
+
+		@include breakpoint(desktop) {
+			max-width: 524px;
+		}
+	}
+
+	.block-action{
+		margin-top: 64px;
+
+		> * {
+
+			& + * {
+				margin-left: 24px;
+
+				@include breakpoint(desktop) {
+					margin-left: 32px;
+				}
+			}
+		}
+	}
+
+	.mask{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		fill: #fff;
+
+		@include breakpoint('min-width', '1786px') {
+			width: 100%;
+		}
+	}
+}

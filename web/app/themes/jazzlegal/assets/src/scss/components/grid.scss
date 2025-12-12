@@ -1,0 +1,23 @@
+.container{
+	position: relative;
+	width: 82vw;
+	max-width: 1614px;
+	margin: 0 auto;
+
+	@include breakpoint(desktop) {
+		width: 92vw;
+	}
+}
+
+.container--medium{
+	@extend .container;
+	max-width: 1146px;
+}
+
+.container-padding{
+	padding: 30px 0;
+
+	@include breakpoint(tablet){
+		padding: 50px 0;
+	}
+}

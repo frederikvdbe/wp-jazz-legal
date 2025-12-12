@@ -1,0 +1,154 @@
+.block_text-image {
+	position: relative;
+
+	.block-body {
+
+		@include breakpoint(tablet-ls) {
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+		}
+
+		@include breakpoint(desktop) {
+		}
+
+		@include breakpoint(desktop-wide) {
+
+		}
+
+		.block-image {
+			position: relative;
+			margin-bottom: 48px;
+
+			@include breakpoint(tablet-ls) {
+				margin-bottom: 0;
+				flex: 0 0 45%;
+			}
+
+			@include breakpoint(desktop-wide) {
+				flex: 0 0 43.27%;
+			}
+
+			&,
+			.image-wrapper,
+			img {
+				min-height: 50vw;
+
+				@include breakpoint(tablet-ls) {
+					min-height: 0;
+				}
+			}
+
+			.image-wrapper {
+				position: relative;
+
+				&,
+				img {
+
+					@include breakpoint(tablet-ls) {
+						height: 100%;
+						min-height: 100%;
+					}
+				}
+
+				img {
+					width: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+
+				svg {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: calc(100% + 2px);
+					height: calc(100% + 2px);
+					margin-top: -1px;
+					margin-left: -1px;
+					fill: #fff;
+
+					&.image-mask-stroke1 {
+						top: 24px;
+						left: 24px;
+						fill: $color-primary-light;
+					}
+				}
+			}
+
+			.image-caption {
+				@extend %font-size-header6;
+				position: relative;
+				z-index: 2;
+				margin-top: 12px;
+				text-align: center;
+			}
+		}
+
+		.block-text {
+
+			@include breakpoint(tablet-ls) {
+				flex: 0 0 45.44%;
+				order: 2;
+				max-width: 608px;
+			}
+
+			.block-title {
+				@extend %font-title;
+				@extend %font-size-header2;
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&.block--image-right {
+
+		.block-body .block-image {
+			order: 2;
+		}
+
+		.block-body .block-text {
+			order: 1;
+		}
+	}
+
+	&.block--background-primary {
+		padding: 74px 0 96px;
+		background: $color-primary-dark;
+		color: $color-body-light;
+
+		@include breakpoint(desktop) {
+			padding: 137px 0 212px;
+		}
+
+		.block-title {
+			color: #fff;
+		}
+
+		.block-image .image-wrapper svg {
+			fill: $color-primary-dark;
+
+			&.image-mask-stroke1 {
+				fill: rgba(255, 255, 255, .08);
+			}
+		}
+
+		.block-text a {
+
+		}
+
+		.mask {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			fill: #fff;
+
+			&.mask1 {
+				top: 0;
+			}
+
+			&.mask2 {
+				bottom: -1px;
+			}
+		}
+	}
+}

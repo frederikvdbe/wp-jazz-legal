@@ -1,0 +1,152 @@
+ul.tabs-nav{
+	@extend %list-reset;
+	display: none;
+	flex-flow: row wrap;
+	justify-content: center;
+	border-bottom: 2px solid rgba($color-body-dark, .1);
+
+	@include breakpoint(tablet-ls) {
+		display: flex;
+	}
+
+	li{
+		margin: 0 22px;
+
+		@include breakpoint(desktop) {
+			margin: 0 52px;
+		}
+
+		a{
+			position: relative;
+			display: inline-block;
+			padding: 37px 0;
+
+			&:after{
+				content: " ";
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: none;
+			}
+		}
+
+		&.--active{
+
+			a{
+				color: $color-accent;
+
+				&:after{
+					background: $color-accent;
+				}
+			}
+		}
+
+		&.--initial{
+
+		}
+	}
+}
+
+.tabs-content{
+
+	.tab-pane{
+		border-bottom: 1px solid rgba($color-primary-dark, .1);
+
+		@include breakpoint(tablet-ls) {
+			border-bottom: 0;
+		}
+
+		.pane-header{
+			position: relative;
+			padding: 24px 0;
+			font-weight: 400;
+			transition: all .6s $easing-default;
+
+			@include breakpoint(tablet-ls) {
+				display: none;
+			}
+
+			.pane-title{
+				position: relative;
+
+				a {
+					hyphens: manual;
+					padding-right: 1rem;
+				}
+
+				&:after{
+					@extend %fa-pseudo;
+					font-family: "Font Awesome 5 Pro";
+					content: "\f054";
+					font-weight: 400;
+
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0;
+					transition: all .6s $easing-default;
+				}
+			}
+		}
+
+		.pane-body{
+			display: none;
+			padding: 19px 0 48px;
+
+			@include breakpoint(tablet) {
+				padding-top: 48px;
+			}
+
+			@include breakpoint(desktop) {
+				padding-top: 86px;
+				padding-bottom: 64px;
+			}
+
+			@include breakpoint(desktop-wide) {
+				padding-top: 116px;
+				padding-bottom: 86px;
+			}
+
+			.pane-title{
+
+				@include breakpoint(desktop) {
+					margin-bottom: 54px;
+				}
+			}
+		}
+
+		&.--active{
+
+			.pane-header{
+
+				&,
+				a{
+					color: $color-accent;
+				}
+
+				.pane-title{
+
+					&:after{
+						transform: translateY(-50%) rotate(90deg);
+					}
+				}
+			}
+
+			.pane-body{
+				display: block;
+			}
+		}
+
+		&.--initial{
+
+			.pane-body{
+
+				@include breakpoint(tablet-ls) {
+					display: block;
+				}
+			}
+		}
+	}
+}

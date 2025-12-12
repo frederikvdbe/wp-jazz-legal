@@ -1,0 +1,273 @@
+.block_form{
+	position: relative;
+
+	.form-footnote{
+		@extend %font-size-header6;
+		margin-bottom: 24px;
+		color: $form-input-color-placeholder;
+	}
+
+	.block-form{
+	}
+
+	.block-footer{
+		background: $color-primary-dark;
+	}
+
+	&.form-calculator{
+
+		.block-form{
+			padding: 64px 0 0;
+			background: $color-primary-light;
+			color: $color-primary-dark;
+
+			@include breakpoint(desktop) {
+				padding: 155px 0 0;
+			}
+		}
+
+		.block-footer{
+			padding: 80px 0 155px 0;
+			color: #fff;
+
+			.container-results{
+
+				.result-header{
+
+					.footer-title{
+						color: #fff;
+					}
+				}
+
+				.result-body{
+
+					.result-item{
+						display: flex;
+						justify-content: space-between;
+						padding-top: 22px;
+						padding-bottom: 22px;
+						border-bottom: 1px solid rgba($color-primary-light, .4);
+
+						&:last-of-type{
+							border-bottom: 0;
+						}
+
+						.item-title{
+
+						}
+
+						.item-price{
+							font-weight: 700;
+						}
+
+						&.item-total{
+							@extend %font-size-header3;
+
+							.item-title{
+
+								span{
+									@extend %font-size-xxsmall;
+
+									a{
+										color: #fff;
+										font-weight: 600;
+										@include text-underlined(rgba($color-body-light, .3), false);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.container-includes{
+				padding-top: 64px;
+				padding-bottom: 64px;
+
+				@include breakpoint(desktop) {
+					padding-top: 124px;
+					padding-bottom: 124px;
+				}
+
+				.result-includes{
+					position: relative;
+					padding: 39px 20px;
+					border: 1px solid rgba($color-primary-light, .4);
+
+					@include breakpoint(desktop) {
+						padding: 0;
+						border: 0;
+					}
+
+					&:before{
+						content: " ";
+						display: none;
+						position: absolute;
+						z-index: 1;
+						top: -39px;
+						right: -40px;
+						bottom: -48px;
+						left: -40px;
+						background: $color-primary-dark;
+						border: 1px solid rgba($color-primary-light, .4);
+
+						@include breakpoint(desktop) {
+							display: block;
+						}
+					}
+				}
+
+				.result-header,
+				.result-body{
+					position: relative;
+					z-index: 2;
+				}
+
+				.result-header{
+
+					.footer-title{
+						@extend %font-body;
+						@extend %font-size-body;
+						font-weight: 700;
+						color: #fff;
+					}
+				}
+
+				.result-body{
+
+					.list-checks{
+
+						@include breakpoint(tablet) {
+							display: flex;
+							flex-flow: row wrap;
+							justify-content: space-between;
+						}
+
+						li{
+							@include breakpoint(tablet) {
+								flex: 0 0 47%;
+								margin-bottom: 24px;
+							}
+
+							&:nth-last-child(-n+2) {
+								@include breakpoint(tablet) {
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.form--calculated{
+
+			.block-form{
+				padding-bottom: 121px;
+			}
+
+			.block-footer{
+				padding-bottom: 0;
+			}
+		}
+
+		.mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+			fill: #fff;
+		}
+	}
+
+	&.form-lead{
+		background: $color-primary-light;
+		color: $color-primary-dark;
+		padding: 36px 0 66px;
+
+		@include breakpoint(tablet) {
+			padding-top: 88px;
+		}
+
+		@include breakpoint(desktop) {
+			padding: 155px 0 196px;
+		}
+
+		.form-wrap{
+			position: relative;
+			background: #fff;
+			padding: 39px 20px;
+
+			@include breakpoint(desktop) {
+				padding: 0;
+			}
+
+			&:before{
+				content: " ";
+				display: none;
+				position: absolute;
+				z-index: 1;
+				top: -39px;
+				right: -40px;
+				bottom: -48px;
+				left: -40px;
+				background: #fff;
+
+				@include breakpoint(desktop) {
+					display: block;
+				}
+			}
+
+			.form-header{
+				position: relative;
+				z-index: 2;
+
+				.form-title{
+					@extend %font-title;
+					@extend %font-size-header2;
+					color: $color-primary-dark;
+					margin-bottom: 51px;
+					
+					span {
+						hyphens: manual;
+					}
+				}
+			}
+
+			form{
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+		&.form--calculated{
+			background: $color-primary-dark;
+			padding-top: 46px;
+			padding-bottom: 196px;
+
+			@include breakpoint(desktop) {
+				padding-top: 126px;
+				padding-bottom: 196px;
+			}
+		}
+
+		.mask6{
+			position: absolute;
+			top: -1px;
+			left: 0;
+			width: 100%;
+			height: auto;
+			fill: #fff;
+		}
+
+		.mask8{
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			width: 100%;
+			height: auto;
+			fill: #fff;
+		}
+	}
+}

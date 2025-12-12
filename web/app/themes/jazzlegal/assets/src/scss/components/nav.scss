@@ -1,0 +1,155 @@
+.nav {
+	&-site {
+		position: fixed;
+		z-index: $z-nav;
+		top: 0;
+		left: 0;
+		right: -30px;
+		transform: translateY(-100%);
+		background: $color-primary-dark;
+		color: #fff;
+		padding-top: $size-header;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 100%;
+
+		@include breakpoint(desktop) {
+			padding-top: $size-header-desktop;
+		}
+
+		.nav-inner {
+			//border-top: 1px solid rgba($color-primary-light, .3);
+			padding-top: 56px;
+			padding-bottom: 29px;
+
+			@include breakpoint(tablet) {
+				padding-top: 86px;
+				padding-bottom: 49px;
+			}
+		}
+
+		a {
+			@extend %font-title;
+			color: #fff;
+		}
+
+		ul {
+			@extend %list-reset;
+
+			&.menu.site-menu {
+				> li {
+					margin-bottom: 48px;
+
+					@include breakpoint(desktop) {
+						margin-bottom: 68px;
+					}
+
+					&:last-of-type {
+						//margin-bottom: 0;
+					}
+
+					> a {
+						@extend %font-size-header1;
+						display: inline-block;
+						margin-bottom: 26px;
+					}
+
+					ul.sub-menu {
+						display: flex;
+						flex-flow: row wrap;
+						align-items: center;
+
+						> li {
+							&:after {
+								display: inline-block;
+								content: "/";
+								margin: 4px 12px;
+								color: rgba($color-body-light, 0.3);
+
+								@include breakpoint(desktop) {
+									margin: 8px 20px;
+								}
+							}
+
+							&:last-of-type {
+								&:after {
+									content: " ";
+								}
+							}
+
+							a {
+								font-size: 1rem;
+								@include text-underlined(
+									rgba($color-body-light, 0.3),
+									true
+								);
+
+								@include breakpoint(mobile-ls) {
+									font-size: 1.3rem;
+								}
+							}
+
+							&.current-menu-item {
+								a {
+									@include text-underlined(
+										rgba($color-body-light, 0.3),
+										false
+									);
+								}
+							}
+						}
+					}
+
+					&.menu-socials {
+						a {
+							@extend %font-size-header3;
+							display: inline-block;
+							margin-right: 16px;
+						}
+					}
+				}
+			}
+
+			&.menu.legal-menu {
+				@include breakpoint(tablet) {
+					display: flex;
+				}
+
+				@include breakpoint(desktop) {
+					display: none;
+				}
+
+				li {
+					display: inline-block;
+					margin: 0 16px 0 0;
+
+					@include breakpoint(tablet) {
+						display: block;
+					}
+
+					a {
+						@extend %font-size-tiny;
+						@extend %font-body;
+						text-transform: uppercase;
+						font-weight: 600;
+						@include letter-spacing(50);
+					}
+				}
+			}
+		}
+
+		&.--open {
+			box-shadow: 0 3px 30px rgba($color-primary-dark, 0.4);
+		}
+	}
+}
+
+.nav-backdrop {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	//background: rgba(0, 0, 0, .4);
+}

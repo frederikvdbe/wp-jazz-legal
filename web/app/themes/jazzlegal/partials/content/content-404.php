@@ -1,0 +1,2 @@
+<p><?php _e('Helaas, deze pagina is niet gevonden..', 'jazzlegal_back'); ?></p>
+<p><?php _e('Mogelijk bestaat deze pagina niet meer, of is ze verhuisd. Keer terug naar de ', 'jazzlegal_back');?><a href="<?php echo site_url(); ?>"><?php _e('homepagina', 'jazzlegal_back'); ?></a><?php _e(' of kies een pagina uit het hoofdmenu...', 'jazzlegal_back'); ?></p>

@@ -1,0 +1,41 @@
+.tooltip {
+	color: $color-body-light;
+	opacity: 0.7;
+	transition: all 0.2s $easing-default;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+
+	&.tooltip--active {
+		color: $color-primary-dark;
+		opacity: 1;
+	}
+}
+
+.tooltipster-base {
+	//max-width: 360px;
+
+	.tooltipster-box {
+		background: $color-primary-dark;
+		border: 0;
+
+		.tooltipster-content {
+			@extend %font-size-xsmall;
+			color: #fff;
+		}
+	}
+
+	.tooltipster-arrow {
+		.tooltipster-arrow-uncropped {
+			.tooltipster-arrow-border {
+				border-top-color: $color-primary-dark;
+			}
+
+			.tooltipster-arrow-background {
+				border-top-color: $color-primary-dark;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+// Default size: 180 x 60;
+
+.logo-antenna{
+	position: relative;
+	height: 42px;
+	width: auto;
+	transition: left .4s $easing-default;
+
+	.logo-mark{
+
+		svg{
+			fill: $color-body-dark;
+
+			path{
+				fill: #fff;
+			}
+		}
+	}
+
+	.logo-type{
+		display: none;
+	}
+
+	&.logo--left{
+
+	}
+
+	&.logo--right{
+
+		svg{
+			display: block;
+			height: 42px;
+		}
+
+		.logo-type{
+			display: none;
+		}
+	}
+}

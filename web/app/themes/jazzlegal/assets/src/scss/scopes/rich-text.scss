@@ -1,0 +1,167 @@
+.s-rich-text {
+	/**
+	 * Set the bottom margin on heading elements
+	 */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 1.5rem;
+	}
+
+	/**
+	 * Set the top margin for heading elements to create space between sections
+	 */
+
+	* + h1,
+	* + h2,
+	* + h3,
+	* + h4,
+	* + h5,
+	* + h6 { margin-top: 3rem }
+
+	/**
+	 * Set the margin between paragraphs
+	 */
+
+	p + *,
+	table + *,
+	.c-btn + * { margin-top: 1.5rem; }
+
+	/**
+	 * Set the margin between lists
+	 */
+
+	ul + *,
+	ol + * { margin-top: 1.5rem; }
+
+	strong {
+		color: $color-body-dark;
+	}
+
+	/**
+	 * Links
+	 */
+
+	a:not(.btn-rounded):not(.btn-link) {
+		color: $color-text-body;
+		@include text-underlined(rgba($color-accent, .5), false, $color-accent-dark);
+	}
+
+	/**
+	 * Lists
+	 */
+
+	ul,
+	ol {
+		padding: 0 0 0 1rem;
+
+		ul { margin-top: 1rem; }
+
+		li {
+			position: relative;
+			display: block;
+			padding-left: 2rem;
+		}
+
+		li + li { margin-top: .4rem; }
+	}
+
+	ul {
+		li {
+			&:before {
+				content: '';
+				position: absolute;
+				top: .72rem;
+				left: .24rem;
+				width: .4rem;
+				height: .4rem;
+				background: $color-primary-dark;
+				border-radius: 100%;
+			}
+		}
+	}
+
+	ol {
+		counter-reset: ol-counter;
+
+		li {
+			counter-increment: ol-counter;
+
+			&:before {
+				content: counter(ol-counter) ". ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: $color-primary-dark;
+				font-weight: 600;
+			}
+		}
+	}
+
+	hr {
+		margin: 5rem 0;
+		border: 0;
+		border-top: 1px solid rgba($color-body-light, .4);
+	}
+
+	blockquote {
+		position: relative;
+		padding-left: 32px;
+
+		&:before{
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 8px;
+			background: $color-primary-light;
+		}
+	}
+
+	[id^="attachment_"] {
+		width: auto !important;
+		height: auto;
+		margin: 40px auto;
+
+		@include breakpoint(tablet) {
+			margin: 64px auto;
+		}
+
+		@include breakpoint(desktop) {
+			margin: 80px auto;
+		}
+
+		img {
+			margin: 0 auto;
+			max-width: 100%;
+			height: auto;
+		}
+
+		.wp-caption-text {
+			@extend %font-size-header6;
+			padding-top: 12px;
+			text-align: center;
+		}
+	}
+
+	.button_group {
+		margin-top: 40px;
+
+		@include breakpoint(desktop) {
+			margin-top: 64px;
+		}
+	}
+
+	&.s-richt-text--inverse {
+
+		a {
+			color: $color-body-light;
+			@include text-underlined(rgba($color-primary, .24), false, #ffffff);
+		}
+	}
+}

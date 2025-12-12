@@ -1,0 +1,123 @@
+.sgl-post {
+	.block_hero {
+	}
+
+	.block_content {
+		position: relative;
+		z-index: 99;
+		// Negative offset on mobile for back button
+		margin-top: calc(-5vw * 0.76);
+		margin-bottom: 12vw;
+
+		@include breakpoint(desktop) {
+			margin-top: calc(-4vw * 0.76);
+		}
+
+		@include breakpoint(desktop-wide) {
+			margin-top: 64px;
+		}
+
+		.block-header {
+			.header-nav {
+				.btn--back {
+					@include between-breakpoints(
+						0px,
+						$breakpoint_desktop_wide,
+						false
+					) {
+						display: block;
+						width: 42px;
+						height: 42px;
+						overflow: hidden;
+						//text-indent: -2000px;
+						padding: 0;
+						color: #fff;
+
+						&:before {
+							color: $color-body-dark;
+						}
+					}
+
+					@include breakpoint(desktop-wide) {
+						position: absolute;
+						top: 68px;
+						left: 0;
+					}
+				}
+			}
+
+			.header-title {
+				@extend %font-title;
+				@extend %font-size-header1;
+				margin-top: 12vw;
+				color: $color-primary-dark;
+
+				@include breakpoint(tablet) {
+					margin-top: 8vw;
+				}
+
+				@include breakpoint(desktop) {
+					display: none;
+				}
+			}
+
+			.header-meta {
+				margin-top: 4vw;
+				color: $color-body-light;
+				font-weight: 200;
+
+				@include breakpoint(tablet) {
+					margin-top: 2vw;
+				}
+
+				@include breakpoint(desktop-wide) {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.block-body {
+			.body-intro {
+				margin-top: 8vw;
+
+				@include breakpoint(tablet) {
+					margin-top: 4vw;
+				}
+
+				@include breakpoint(desktop-wide) {
+					margin-top: 36px;
+				}
+
+				a {
+					color: $color-body-dark;
+					@include text-underlined(rgba($color-accent, 0.5), false);
+
+					&:hover {
+						color: $color-accent-dark;
+					}
+				}
+
+				strong {
+					color: $color-primary-dark;
+
+					a {
+						color: $color-primary-dark;
+						//@include text-underlined(rgba($color-accent, .5), true);
+					}
+				}
+			}
+		}
+
+		&.content--offset-bottom {
+			padding-bottom: 16vw;
+		}
+	}
+
+	// Page uses content blocks
+	&.post--content-blocks {
+
+		.block_content {
+			margin-bottom: 0;
+		}
+	}
+}

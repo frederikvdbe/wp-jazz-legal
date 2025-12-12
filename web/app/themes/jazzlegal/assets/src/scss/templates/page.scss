@@ -1,0 +1,14 @@
+.sgl-page {
+
+	.block_content {
+		margin-top: 64px;
+
+		@include breakpoint(desktop) {
+			margin-top: 5vw;
+		}
+
+		&.content--offset-bottom {
+			padding-bottom: 16vw;
+		}
+	}
+}
